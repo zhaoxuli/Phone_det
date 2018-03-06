@@ -1,0 +1,43 @@
+[general_settings]
+max_img_w = 2560
+max_img_h = 1920
+batch_mode = 1
+
+[scan_settings]
+scale_bits				= 4
+start_scale_denom			= 16
+scale_step_denom			= 20
+scan_end_scale				= 0.02
+scan_mode				= uniform
+coarse_to_fine_layer_num	        = 8
+pad_border				= 20
+# pyramid types:
+# 1) fp: fixed point version with bilinear interpolation, start_scale_denom supported.
+# 2) gc: golden c version with bilinear interpolation, the same as chip. start_scale_denom is fixed to be 1 << scale_bits.
+# 3) octave: image octave, shrink image by 0.5, 0.25, 0.125, etc.
+pyramid_type                            = fp
+octave_num                              = 5
+octave_sub_level_num                    = 3
+
+
+[merge_settings]
+merge_overlap_ratio_thres	= 0.3
+nms_score_thres			= 1.0
+nms_max_overlap_ratio		= 1.0
+nms_max_contain_ratio		= 1.0
+
+[model0]
+#model_fname = /home/changhuang/model/face/pred/20160811_40x40_diff_axis_2.lv23.20160813_40x40_release_data0801_diff_axis2_wc256.fp8_10_4.bin
+#model_fname = /home/changhuang/model/face/pred/20160905_40x40_with_threshold_weight025_fp04_fewer_feat_bgoverlap015_too_hard.lv23.20160813_40x40_release_data0801_diff_axis2_wc256.fp8_10_4.bin
+#model_fname = /home/changhuang/model/face/pred/20160916_40x40_all72kpt.lv25.20160813_40x40_release_data0801_diff_axis2_wc256.fp8_10_4.bin
+model_fname = /home/changhuang/model/face/pred/face_40x40_lv23.fp8_10_4.bin
+
+#[model1]
+#model_fname = /home/changhuang/tmp/dump/face_20160811_40x40.fine.tune.quanti.py.01.fp8_10_4.bin
+
+#[model2]
+#model_fname = /home/changhuang/tmp/dump/face_20160811_40x40.fine.tune.quanti.py.10.fp8_10_4.bin
+
+#[model3]
+#model_fname = /home/changhuang/tmp/dump/face_20160811_40x40.fine.tune.quanti.py.50.fp8_10_4.bin
+
