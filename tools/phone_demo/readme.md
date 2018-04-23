@@ -6,3 +6,11 @@
 ##  注意
 clone到本地后一定要修改子函数`get_phone_loc`中的 `cmd`，该函数是通过调用 alpha_det 预测库来进行预测结果，  
 详细修改方式参见  http://gitlab.k8s.hobot.cc/car-algorithm/Tutorials/tree/alphaDet_Prediction/alpha-det-prediction
+
+## 依赖
+```
+sudo apt-get  install libdc1394-22
+sudo apt-get install ffmpeg
+sudo apt-get  install libqt4-test
+sudo apt-get install libopencv-dev
+```
